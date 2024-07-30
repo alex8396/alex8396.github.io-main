@@ -598,6 +598,10 @@ legend {
   background: url("../../images/portfolio/portfolio1.jpg") no-repeat 0 0;
   background-size: cover;
 }
+.portfolio_wrap .port-img .imges-wrap .monami2 {
+  background: url("../../images/portfolio/portfolio2.jpg") no-repeat 0 0;
+  background-size: cover;
+}
 
 .sec5 {
   background: #f4f4f4 url(../../images/portfolio/portfolio2.jpg) no-repeat 50% 50%/contain;
