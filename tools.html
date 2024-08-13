@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GSAP Scroll Effect</title>
+
+    <link href="https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        body {
+            color: #fff;
+            font-family: "NexonLv1Gothic";
+            font-weight: 300;
+            background-color: #fff;
+        }
+        #section3 {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(3, auto);
+    /* Adjust the gap between items as needed */
+}
+
+        #parallax__title {
+            position: fixed;
+            left: 20px;
+            top: 20px;
+            z-index: 1000;
+        }
+
+        #parallax__title h1 {
+            font-size: 30px;
+            border-bottom: 1px dashed #fff;
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+            font-weight: 400;
+            display: inline-block;
+        }
+
+        #parallax__title p {
+            font-size: 16px;
+        }
+
+        #parallax__title ul {
+            margin-top: 10px;
+        }
+
+        #parallax__title li {
+            display: inline;
+        }
+
+        #parallax__title li a {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 1px dashed #fff;
+            display: inline-block;
+            text-align: center;
+            line-height: 20px;
+            font-size: 12px;
+        }
+
+        #parallax__title li.active a {
+            background: #fff;
+            color: #000;
+        }
+
+        /* parallax__cont */
+        #parallax__cont {
+            overflow: hidden;
+        }
+
+        .parallax__item {
+            width: 100%;
+            height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        
+
+        .parallax__item__num {
+            position: absolute;
+            right: 20px;
+            bottom: 20px;
+            font-size: 5vw;
+            line-height: 1;
+        }
+
+        .parallax__item__img {
+            width: 10vw;
+            height: 10vw;
+            margin: 1vw;
+            background-color: #fff;
+            background-size: cover;
+            background-position: center;
+        }
+
+       .parallax__item__img1 {
+            width: 10vw;
+            height: 10vw;
+            margin: 1vw;
+            background-color: #fff;
+            background-size: cover;
+            background-position: center;
+        }
+        .parallax__item__img2 {
+            width: 10vw;
+            height: 10vw;
+            margin: 1vw;
+            background-color: #fff;
+            background-size: cover;
+            background-position: center;
+        }
+        .parallax__item__img3 {
+            width: 10vw;
+            height: 10vw;
+            margin: 1vw;
+            background-color: #fff;
+            background-size: cover;
+            background-position: center;
+        }
+        .parallax__item__img4 {
+            width: 10vw;
+            height: 10vw;
+            margin: 1vw;
+            background-color: #fff;
+            background-size: cover;
+            background-position: center;
+        }
+        .parallax__item__img5 {
+            width: 10vw;
+            height: 10vw;
+            margin: 1vw;
+            background-color: #fff;
+            background-size: cover;
+            background-position: center;
+        }
+        .parallax__item__img6 {
+            width: 10vw;
+            height: 10vw;
+            margin: 1vw;
+            background-color: #fff;
+            background-size: cover;
+            background-position: center;
+        }
+        .parallax__item__img7 {
+            width: 10vw;
+            height: 10vw;
+            margin: 1vw;
+            background-color: #fff;
+            background-size: cover;
+            background-position: center;
+        }
+        .parallax__item__img8 {
+            width: 10vw;
+            height: 10vw;
+            margin: 1vw;
+            background-color: #fff;
+            background-size: cover;
+            background-position: center;
+        }
+        .parallax__item__img9 {
+            width: 10vw;
+            height: 10vw;
+            margin: 1vw;
+            background-color: #fff;
+            background-size: cover;
+            background-position: center;
+        }
+        .parallax__item__img10 {
+            width: 10vw;
+            height: 10vw;
+            margin: 1vw;
+            background-color: #fff;
+            background-size: cover;
+            background-position: center;
+        }
+        .parallax__item__img11 {
+            width: 10vw;
+            height: 10vw;
+            margin: 1vw;
+            background-color: #fff;
+            background-size: cover;
+            background-position: center;
+        }
+        .parallax__item__img12 {
+            width: 10vw;
+            height: 10vw;
+            margin: 1vw;
+            background-color: #fff;
+            background-size: cover;
+            background-position: center;
+        }
+        .parallax__item__img13 {
+            width: 10vw;
+            height: 10vw;
+            margin: 1vw;
+            background-color: #fff;
+            background-size: cover;
+            background-position: center;
+        }
+        .parallax__item__img14 {
+            width: 10vw;
+            height: 10vw;
+            margin: 1vw;
+            background-color: #fff;
+            background-size: cover;
+            background-position: center;
+        }
+        .parallax__item__img15 {
+            width: 10vw;
+            height: 10vw;
+            margin: 1vw;
+            background-color: #fff;
+            background-size: cover;
+            background-position: center;
+        }
+        .parallax__item__img16 {
+            width: 10vw;
+            height: 10vw;
+            margin: 1vw;
+            background-color: #fff;
+            background-size: cover;
+            background-position: center;
+        }
+        .parallax__item__img17 {
+            width: 10vw;
+            height: 10vw;
+            margin: 1vw;
+            background-color: #fff;
+            background-size: cover;
+            background-position: center;
+        }
+        .parallax__item__img18 {
+            width: 10vw;
+            height: 10vw;
+            margin: 1vw;
+            background-color: #fff;
+            background-size: cover;
+            background-position: center;
+        }
+        .parallax__item__img19 {
+            width: 10vw;
+            height: 10vw;
+            margin: 1vw;
+            background-color: #fff;
+            background-size: cover;
+            background-position: center;
+        }
+
+        #section3 .parallax__item__img {
+            background-image: url("https://cdn.simpleicons.org/javascript");
+        }
+
+        
+        /* option */
+        #section3 .parallax__item__img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50px;
+        }
+
+        #section3 .parallax__item__img1 {
+            background-image: url("https://cdn.simpleicons.org/html5");
+        }
+
+        
+        /* option */
+        #section3 .parallax__item__img1 {
+            width: 100px;
+            height: 100px;
+            border-radius: 50px;
+        }
+        #section3 .parallax__item__img2 {
+            background-image: url("https://cdn.simpleicons.org/python");
+        }
+
+        
+        /* option */
+        #section3 .parallax__item__img2 {
+            width: 100px;
+            height: 100px;
+            border-radius: 50px;
+        }
+        #section3 .parallax__item__img3 {
+            background-image: url("https://cdn.simpleicons.org/node.js");
+        }
+
+        
+        /* option */
+        #section3 .parallax__item__img3 {
+            width: 100px;
+            height: 100px;
+            border-radius: 50px;
+        }
+        #section3 .parallax__item__img4 {
+            background-image: url("https://cdn.simpleicons.org/mysql");
+        }
+
+        
+        /* option */
+        #section3 .parallax__item__img4 {
+            width: 100px;
+            height: 100px;
+            border-radius: 50px;
+        }
+        #section3 .parallax__item__img5 {
+            background-image: url("https://cdn.simpleicons.org/react");
+        }
+
+        
+        /* option */
+        #section3 .parallax__item__img5 {
+            width: 100px;
+            height: 100px;
+            border-radius: 50px;
+        }
+        #section3 .parallax__item__img6 {
+            background-image: url("https://cdn.simpleicons.org/css3");
+        }
+
+        
+        /* option */
+        #section3 .parallax__item__img6 {
+            width: 100px;
+            height: 100px;
+            border-radius: 50px;
+        }
+        #section3 .parallax__item__img7 {
+            background-image: url("https://cdn.simpleicons.org/Sass");
+        }
+
+        
+        /* option */
+        #section3 .parallax__item__img7 {
+            width: 100px;
+            height: 100px;
+            border-radius: 50px;
+        }
+        #section3 .parallax__item__img8 {
+            background-image: url("https://cdn.simpleicons.org/bootstrap");
+        }
+
+        
+        /* option */
+        #section3 .parallax__item__img8 {
+            width: 100px;
+            height: 100px;
+            border-radius: 50px;
+        }
+        #section3 .parallax__item__img9 {
+            background-image: url("https://cdn.simpleicons.org/spring");
+        }
+
+        
+        /* option */
+        #section3 .parallax__item__img9 {
+            width: 100px;
+            height: 100px;
+            border-radius: 50px;
+        }
+        #section3 .parallax__item__img10 {
+            background-image: url("https://cdn.simpleicons.org/github");
+        }
+
+        
+        /* option */
+        #section3 .parallax__item__img10 {
+            width: 100px;
+            height: 100px;
+            border-radius: 50px;
+        }
+        #section3 .parallax__item__img11 {
+            background-image: url("https://cdn.simpleicons.org/Typescript");
+        }
+
+        
+        /* option */
+        #section3 .parallax__item__img11 {
+            width: 100px;
+            height: 100px;
+            border-radius: 50px;
+        }
+       #section3 .parallax__item__img12 {
+            background-image: url("data:image/jpeg;base64,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");
+        }
+
+        
+        /* option */
+        #section3 .parallax__item__img12 {
+            width: 100px;
+            height: 100px;
+            border-radius: 50px;
+        }
+        #section3 .parallax__item__img13 {
+            background-image: url("https://cdn.simpleicons.org/Figma");
+        }
+
+        
+        /* option */
+        #section3 .parallax__item__img13 {
+            width: 100px;
+            height: 100px;
+            border-radius: 50px;
+        }
+        #section3 .parallax__item__img13 {
+            background-image: url("https://cdn.simpleicons.org/Slack");
+        }
+
+        
+        /* option */
+        #section3 .parallax__item__img13 {
+            width: 100px;
+            height: 100px;
+            border-radius: 50px;
+        }
+        #section3 .parallax__item__img13 {
+            background-image: url("https://search.pstatic.net/sunny?src=https%3A%2F%2Fgsap.com%2Ffavicon-32x32.png&type=f30_30_png_expire24");
+        }
+
+        
+        /* option */
+        #section3 .parallax__item__img13 {
+            width: 100px;
+            height: 100px;
+            border-radius: 50px;
+        }
+        #section3 .parallax__item__img14 {
+            background-image: url("https://cdn.simpleicons.org/adobepremierepro");
+        }
+
+        
+        /* option */
+        #section3 .parallax__item__img14 {
+            width: 100px;
+            height: 100px;
+            border-radius: 50px;
+        }
+        #section3 .parallax__item__img15 {
+            background-image: url("https://cdn.simpleicons.org/adobeaftereffects");
+        }
+
+        
+        /* option */
+        #section3 .parallax__item__img15 {
+            width: 100px;
+            height: 100px;
+            border-radius: 50px;
+        }
+        #section3 .parallax__item__img16 {
+            background-image: url("https://cdn.simpleicons.org/git");
+        }
+
+        
+        /* option */
+        #section3 .parallax__item__img16 {
+            width: 100px;
+            height: 100px;
+            border-radius: 50px;
+        }
+        #section3 .parallax__item__img17 {
+            background-image: url("https://cdn.simpleicons.org/slack");
+        }
+
+        
+        /* option */
+        #section3 .parallax__item__img17 {
+            width: 100px;
+            height: 100px;
+            border-radius: 50px;
+        }
+        #section3 .parallax__item__img18 {
+            background-image: url("https://cdn.simpleicons.org/netlify");
+        }
+
+        
+        /* option */
+        #section3 .parallax__item__img18 {
+            width: 100px;
+            height: 100px;
+            border-radius: 50px;
+        }
+        #section3 .parallax__item__img18 {
+            background-image: url("https://cdn.simpleicons.org/notion");
+        }
+
+        
+        /* option */
+        #section3 .parallax__item__img18 {
+            width: 100px;
+            height: 100px;
+            border-radius: 50px;
+        }
+        #section3 .parallax__item__img19 {
+            background-image: url("https://cdn.simpleicons.org/intellijidea");
+        }
+
+        
+        /* option */
+        #section3 .parallax__item__img19 {
+            width: 100px;
+            height: 100px;
+            border-radius: 50px;
+        }
+        #section3 .parallax__item__img20 {
+            background-image: url("https://cdn.simpleicons.org/jquery");
+        }
+
+        
+        /* option */
+        #section3 .parallax__item__img20 {
+            width: 100px;
+            height: 100px;
+            border-radius: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    
+
+    <main id="parallax__cont">
+        
+
+        <section id="section3" class="parallax__item">
+            <div class="parallax__item__img"></div>
+            <div class="parallax__item__img1"></div>
+            <div class="parallax__item__img2"></div>
+            <div class="parallax__item__img3"></div>
+            <div class="parallax__item__img4"></div>
+            <div class="parallax__item__img5"></div>
+            <div class="parallax__item__img6"></div>
+            <div class="parallax__item__img7"></div>
+            <div class="parallax__item__img8"></div>
+            <div class="parallax__item__img9"></div>
+            <div class="parallax__item__img10"></div>
+        <div class="parallax__item__img11"></div>
+        <div class="parallax__item__img12"></div>
+        <div class="parallax__item__img13"></div>
+        <div class="parallax__item__img14"></div>
+        <div class="parallax__item__img15"></div>
+        <div class="parallax__item__img16"></div>
+        <div class="parallax__item__img17"></div>
+        <div class="parallax__item__img18"></div>
+        <div class="parallax__item__img19"></div>
+        <div class="parallax__item__img20"></div>
+
+        </section>
+        <!-- //section3 -->
+
+        
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/ScrollToPlugin.min.js"></script>
+    <script>
+        
+        //03 : 이미지를 랜덤으로 나오기
+        const ani3 = gsap.timeline();
+        ani3.from("#section3 .parallax__item__img", {
+            autoAlpha: 0,
+            y: -100,
+            ease: "back.out(4)",
+            // stagger: 0.1
+            stagger: {
+                amount: 3,
+                from: "random"
+            }
+        }),
+            ani3.from("#section3 .parallax__item__img1", {
+                autoAlpha: 0,
+                y: -100,
+                ease: "back.out(4)",
+                // stagger: 0.1
+                stagger: {
+                    amount: 3,
+                    from: "random"
+                }
+            }),
+            ani3.from("#section3 .parallax__item__img2", {
+                autoAlpha: 0,
+                y: -100,
+                ease: "back.out(4)",
+                // stagger: 0.1
+                stagger: {
+                    amount: 3,
+                    from: "random"
+                }
+            }),
+            ani3.from("#section3 .parallax__item__img3", {
+                autoAlpha: 0,
+                y: -100,
+                ease: "back.out(4)",
+                // stagger: 0.1
+                stagger: {
+                    amount: 3,
+                    from: "random"
+                }
+            }),
+            ani3.from("#section3 .parallax__item__img4", {
+                autoAlpha: 0,
+                y: -100,
+                ease: "back.out(4)",
+                // stagger: 0.1
+                stagger: {
+                    amount: 3,
+                    from: "random"
+                }
+            }),
+            ani3.from("#section3 .parallax__item__img5", {
+                autoAlpha: 0,
+                y: -100,
+                ease: "back.out(4)",
+                // stagger: 0.1
+                stagger: {
+                    amount: 3,
+                    from: "random"
+                }
+            }),
+            ani3.from("#section3 .parallax__item__img6", {
+                autoAlpha: 0,
+                y: -100,
+                ease: "back.out(4)",
+                // stagger: 0.1
+                stagger: {
+                    amount: 3,
+                    from: "random"
+                }
+            }),
+            ani3.from("#section3 .parallax__item__img7", {
+                autoAlpha: 0,
+                y: -100,
+                ease: "back.out(4)",
+                // stagger: 0.1
+                stagger: {
+                    amount: 3,
+                    from: "random"
+                }
+            }),
+            ani3.from("#section3 .parallax__item__img8", {
+                autoAlpha: 0,
+                y: -100,
+                ease: "back.out(4)",
+                // stagger: 0.1
+                stagger: {
+                    amount: 3,
+                    from: "random"
+                }
+            }),
+            ani3.from("#section3 .parallax__item__img9", {
+                autoAlpha: 0,
+                y: -100,
+                ease: "back.out(4)",
+                // stagger: 0.1
+                stagger: {
+                    amount: 3,
+                    from: "random"
+                }
+            }),
+            ani3.from("#section3 .parallax__item__img10", {
+                autoAlpha: 0,
+                y: -100,
+                ease: "back.out(4)",
+                // stagger: 0.1
+                stagger: {
+                    amount: 3,
+                    from: "random"
+                }
+            }),
+            ani3.from("#section3 .parallax__item__img11", {
+                autoAlpha: 0,
+                y: -100,
+                ease: "back.out(4)",
+                // stagger: 0.1
+                stagger: {
+                    amount: 3,
+                    from: "random"
+                }
+            }),
+            ani3.from("#section3 .parallax__item__img12", {
+                autoAlpha: 0,
+                y: -100,
+                ease: "back.out(4)",
+                // stagger: 0.1
+                stagger: {
+                    amount: 3,
+                    from: "random"
+                }
+            }),
+            ani3.from("#section3 .parallax__item__img13", {
+                autoAlpha: 0,
+                y: -100,
+                ease: "back.out(4)",
+                // stagger: 0.1
+                stagger: {
+                    amount: 3,
+                    from: "random"
+                }
+            }),
+            ani3.from("#section3 .parallax__item__img14", {
+                autoAlpha: 0,
+                y: -100,
+                ease: "back.out(4)",
+                // stagger: 0.1
+                stagger: {
+                    amount: 3,
+                    from: "random"
+                }
+            }),
+            ani3.from("#section3 .parallax__item__img15", {
+                autoAlpha: 0,
+                y: -100,
+                ease: "back.out(4)",
+                // stagger: 0.1
+                stagger: {
+                    amount: 3,
+                    from: "random"
+                }
+            }),
+            ani3.from("#section3 .parallax__item__img16", {
+                autoAlpha: 0,
+                y: -100,
+                ease: "back.out(4)",
+                // stagger: 0.1
+                stagger: {
+                    amount: 3,
+                    from: "random"
+                }
+            }),
+            ani3.from("#section3 .parallax__item__img17", {
+                autoAlpha: 0,
+                y: -100,
+                ease: "back.out(4)",
+                // stagger: 0.1
+                stagger: {
+                    amount: 3,
+                    from: "random"
+                }
+            }),
+            ani3.from("#section3 .parallax__item__img18", {
+                autoAlpha: 0,
+                y: -100,
+                ease: "back.out(4)",
+                // stagger: 0.1
+                stagger: {
+                    amount: 3,
+                    from: "random"
+                }
+            }),
+            ani3.from("#section3 .parallax__item__img19", {
+                autoAlpha: 0,
+                y: -100,
+                ease: "back.out(4)",
+                // stagger: 0.1
+                stagger: {
+                    amount: 3,
+                    from: "random"
+                }
+            }), ani3.from("#section3 .parallax__item__img20", {
+                autoAlpha: 0,
+                y: -100,
+                ease: "back.out(4)",
+                // stagger: 0.1
+                stagger: {
+                    amount: 3,
+                    from: "random"
+                }
+            });
+
+       
+
+       
+    </script>
+</body>
+
+</html>
